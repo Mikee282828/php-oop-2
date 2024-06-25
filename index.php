@@ -40,8 +40,31 @@ include __DIR__ . "/data.php"
                     .
                     number_format($prodotto->getPrice(),2,",","")
                     .
-                '</div>
-            </div>';
+                '</div>';
+
+            switch(get_class($prodotto)){
+                case 'Cuccia':
+                    if($prodotto->dimensioni!=null){
+                        echo '<div>Dimensioni: '. $prodotto->dimensioni . '</div></div>';
+                    }else{
+                        echo '</div>';
+                    }
+                    break;
+                case 'Cibo':
+                    if($prodotto->calorie!=null){
+                        echo '<div>Calorie: '. $prodotto->calorie . '</div></div>';
+                    }else{
+                        echo '</div>';
+                    }
+                    break;
+                case 'Gioco':
+                    if($prodotto->tipo!=null){
+                        echo '<div>Tipo: '. $prodotto->tipo . '</div></div>';
+                    }else{
+                        echo '</div>';
+                    }
+                    break;
+            }
         }
         ?>
     </div>
