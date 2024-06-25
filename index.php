@@ -26,7 +26,7 @@ include __DIR__ . "/data.php"
             
                 <div class="productAnimalCategory">Animale: '
                     .
-                    $prodotto->category
+                    $prodotto->category?->name
                     .
                 '</div>
             
